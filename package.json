@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc -p server/tsconfig.json && tsc --noEmit -p web/tsconfig.json && vite build web",
     "test": "tsx --test \"server/src/**/*.test.ts\"",
+    "start": "node --env-file-if-exists=.env dist/server/entrypoints/app/main.js",
     "start:web": "node --env-file-if-exists=.env dist/server/entrypoints/web/main.js",
     "start:worker": "node --env-file-if-exists=.env dist/server/entrypoints/worker/main.js"
   },

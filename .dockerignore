@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!package.json
+!package-lock.json
+!server/
+!server/tsconfig.json
+!server/src/
+!server/src/**
+!web/
+!web/index.html
+!web/tsconfig.json
+!web/src/
+!web/src/**

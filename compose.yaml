@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:5555:5555"
+    volumes:
+      - ./data:/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:' + process.env.QUOTA_PORT + '/ready').then(response => { if (!response.ok) process.exitCode = 1; }).catch(() => { process.exitCode = 1; })"]
+      interval: 10s
+      timeout: 3s
+      start_period: 10s
+    stop_grace_period: 35s
+    restart: unless-stopped
