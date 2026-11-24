@@ -1,0 +1,26 @@
+{
+  "name": "quota-bowl",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.12.0" },
+  "scripts": {
+    "build": "tsc -p server/tsconfig.json && tsc --noEmit -p web/tsconfig.json && vite build web",
+    "test": "tsx --test \"server/src/**/*.test.ts\"",
+    "start:web": "node --env-file-if-exists=.env dist/server/entrypoints/web/main.js",
+    "start:worker": "node --env-file-if-exists=.env dist/server/entrypoints/worker/main.js"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.0"
+  }
+}
